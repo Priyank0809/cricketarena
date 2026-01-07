@@ -22,5 +22,6 @@ def home(request):
     return HttpResponse("Hello, CricketArena! 🏏 Ready for some cricket magic?")
 
 urlpatterns = [
+    path('admin/', admin.site.urls),
     path('', home),
 ]
