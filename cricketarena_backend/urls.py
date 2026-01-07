@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.http import HttpResponse
 from rest_framework.routers import DefaultRouter
-from players.views import PlayerViewSet
+from players.views import PlayerViewSet, recent_matches
 
 router = DefaultRouter()
 router.register(r'players', PlayerViewSet)
@@ -26,4 +26,5 @@ router.register(r'players', PlayerViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),  # Add this if not there
     path('api/', include(router.urls)),
+    path('api/recent-matches/', recent_matches),
 ]
